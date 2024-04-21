@@ -228,14 +228,14 @@ class Finance extends CI_controller{
 		// $this->input_data($data,'user');
 		// redirect('MenuPage/Form/tambah_user');
 
-        $dt['title'] = '';
-        $dt['id'] = '';
-        $dt['tanggal'] = date('d/m/Y');
-        $dt['v2'] = $this->am->get_rekanan('JSON');
-        $dt['v3'] = $this->am->get_aset_umum('JSON');
+        // $dt['title'] = '';
+        // $dt['id'] = '';
+        // $dt['tanggal'] = date('d/m/Y');
+        // $dt['v2'] = $this->am->get_rekanan('JSON');
+        // $dt['v3'] = $this->am->get_aset_umum('JSON');
         $this->load->view('MenuPage/Form/tambah_user');
 
-        echo json_encode($dt['v3']);
+        // echo json_encode($dt['v3']);
     }
 
     function form_edit_aset_bagi_hasil($id){//=============ada view

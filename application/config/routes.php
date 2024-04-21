@@ -180,4 +180,14 @@ $route['keluar-sistem'] = 'Homepage/keluar';//=================ada view
 $route['konfirmasi-ganti-email/(:num)'] = 'Homepage/konfirmasi_ganti_email/$1';//=================ada view
 $route['cek-mail'] = 'Administrasi/cek_mail';//=================ada view
 
+$route['range'] = 'range/index';
+$route['tambah-range'] = 'range/tambah';
+$route['store-range'] = 'range/store';
+$route['edit-range/(:num)'] = 'range/edit/$1';
+$route['update-range/(:num)'] = 'range/update/$1';
+$route['delete-range/(:num)'] = 'range/delete/$1';
+
+$route['transaction'] = 'Transaction/index';
+
+
 

@@ -53,45 +53,34 @@
 
         <!-- page content -->
         <div class="right_col" role="main" style="color: black;">
-            <div class="col-md-12">
-                <button class="btn btn-md btn-warning" onclick="window.location.href=document.referrer">Batal | Kembali</button>
-            </div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="x_panel">
-            <div class="x_title">
-            <h1>Tambah Pengguna Baru</h1>
-              <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-              <form action="#" id="set-aset-baru" method="POST" class="form-horizontal form-label-left">
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Nama Pengguna</label>
+          <div class="col-md-12">
+              <button class="btn btn-md btn-warning" onclick="window.location.href=document.referrer">Batal | Kembali</button>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h1>Ubah Data Range</h1>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <form action="<?= site_url('update-range') ?>" id="" method="POST" class="form-horizontal form-label-left">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Range Awal</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="text" required="" class="form-control" name="nama">
+                          <input type="number" value="<?= $d->range_awal ?>"  autocomplete="off" required="" class="form-control" name="range_awal">
                         </div>
                       </div> <br>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Alamat</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Range Akhir</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input autocomplete="off" type="text" required="" class="form-control" name="alamat">
+                          <input autocomplete="off" value="<?= $d->range_akhir ?>" type="number" required="" class="form-control" name="range_akhir">
                         </div>
                       </div><br>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">No HP</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Biaya</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="text" required="" class="form-control" name="no_hp">
-                        </div>
-                      </div> <br>
-                      <h1>test</h1>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="kontak">Status</label>
-                        <div class="col-md-3 col-sm-3 col-xs-3 text-center">
-                          <input checked="" type="radio" name="status" value="Aktif" class="primary">
-                          <label for="">Aktif</label>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                          <input type="radio" name="status" value="Tidak Aktif">
-                          <label for="">Tidak Aktif</label>
+                          <input type="text" value="<?= $d->biaya ?>" required="" class="form-control" name="biaya">
                         </div>
                       </div> <br>
                       
@@ -99,16 +88,17 @@
                         <button type="submit" class="btn btn-md btn-primary">Kirim</button>
                       </div>
                     </form>
-            </div>
+                  </div>
+                </div>
+              </div>
           </div>
-        </div>
         </div>
         <!-- /page content -->
 
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Bumdes - Krandon Jaya Mandiri
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -122,6 +112,6 @@
     <script src="<?= base_url('asset/JS/Fitur.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Dtmpicker.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Error_handler.js') ?>"></script>
-    <script src="<?= base_url('asset/JS/Form.js') ?>"></script>
+    <script src="<?= base_url('asset/JS/Form_edit.js') ?>"></script>
   </body>
 </html>
