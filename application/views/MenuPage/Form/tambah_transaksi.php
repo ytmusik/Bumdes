@@ -53,53 +53,50 @@
 
         <!-- page content -->
         <div class="right_col" role="main" style="color: black;">
-          <div class="col-md-12">
-              <button class="btn btn-md btn-warning" onclick="window.location.href=document.referrer">Batal | Kembali</button>
-          </div>
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h1>Ubah Data Range</h1>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <form action="<?= base_url('update-range') ?>" id="" method="POST" class="form-horizontal form-label-left">
-                    <div class="form-group">
-                        <input type="hidden" name="range_id" value="<?= $d->range_id ?>" >
+            <div class="col-md-12">
+                <button class="btn btn-md btn-warning" onclick="window.location.href=document.referrer">Batal | Kembali</button>
+            </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+            <h1>Tambah Range</h1>
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <form action="store-range"  method="POST" class="form-horizontal form-label-left">
+                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Range Awal</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="number" value="<?= $d->range_awal ?>"  autocomplete="off" required="" class="form-control" name="range_awal">
+                          <input type="number" autocomplete="off" required="" class="form-control" name="range_awal">
                         </div>
                       </div> <br>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Range Akhir</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input autocomplete="off" value="<?= $d->range_akhir ?>" type="number" required="" class="form-control" name="range_akhir">
+                          <input autocomplete="off" type="number" required="" class="form-control" name="range_akhir">
                         </div>
                       </div><br>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3">Biaya</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="text" value="<?= $d->biaya ?>" required="" class="form-control" name="biaya">
+                          <input type="text" required="" class="form-control" name="biaya">
                         </div>
                       </div> <br>
                       
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <button type="submit" class="btn btn-md btn-primary">Kirim</button>
+                        <button type="submit" class="btn btn-md btn-primary">Submit</button>
                       </div>
                     </form>
-                  </div>
-                </div>
-              </div>
+            </div>
           </div>
+        </div>
         </div>
         <!-- /page content -->
 
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            Bumdes - Krandon Jaya Mandiri
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -113,6 +110,6 @@
     <script src="<?= base_url('asset/JS/Fitur.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Dtmpicker.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Error_handler.js') ?>"></script>
-    <script src="<?= base_url('asset/JS/Form_edit.js') ?>"></script>
+    <script src="<?= base_url('asset/JS/Form.js') ?>"></script>
   </body>
 </html>

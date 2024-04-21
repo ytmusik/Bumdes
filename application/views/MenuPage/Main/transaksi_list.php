@@ -60,7 +60,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
             <div class="x_title">
-            <h1>Daftar Range</h1>
+            <h1>Daftar Transaksi</h1>
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
@@ -84,7 +84,7 @@
               </div>
               <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
-                  <a href="tambah-range" class="btn btn-md btn-info">Tambah Range</a>
+                  <a href="tambah-transaksi" class="btn btn-md btn-info">Input Tagihan</a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="row">
@@ -103,22 +103,40 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Range</th>
-                    <th>Biaya</th>
+                    <th>User</th>
+                    <th>Awal</th>
+                    <th>Akhir</th>
+                    <th>Periode</th>
+                    <th>Pemakaian</th>
+                    <th>Admin</th>
+                    <th>Total</th>
+                    <th>Status</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
 
                 <tbody data-act="hapus-aset-sewa" data-meth="POST">
                   <?php $nomor=1?>
-                  <?php foreach($range as $d):?>
+                  <?php foreach($transaksi as $d):?>
                     <tr>
                           <td class="text-center" ><?php echo $nomor ?></td>
-                          <td><?php echo $d->range ?></td>
-                          <td class="text-center" ><?php echo $d->biaya ?></td>
+                          <td><?php echo $d->user_id ?></td>
+                          <td><?php echo $d->range_awal ?></td>
+                          <td><?php echo $d->range_akhir ?></td>
+                          <td><?php echo $d->bulan . "/" . $d->tahun ?></td>
+                          <td><?php echo $d->total_penggunaan ?></td>
+                          <td>Rp. 5.000</td>
+                          <td>Rp. <?= number_format($d->total_biaya, 0, ',' , '.') ?></td>
+                          <td>
+                            <?php if($d->status == 0) : ?>
+                              <div class="badge bg-red" >Belum bayar</div>
+                            <?php else : ?>
+                                <div class="badge bg-green" >Lunas</div>
+                            <?php endif ?>
+                          </td>
                           <td class="text-center">
-                            <a href="edit-range/<?= $d->range_id ?>" class="btn btn-xs btn-warning">Ubah</a>
-                            <a onclick="return confirm('are your sure want to delete this?')" href="delete-range/<?= $d->range_id ?>" type="button" class="btn btn-xs btn-danger hapus">Hapus</a>
+                            <a href="edit-range/<?= $d->transaksi_id ?>" class="btn btn-xs btn-success">Bayar</a>
+                            <!-- <a onclick="return confirm('are your sure want to delete this?')" href="delete-range/<?= $d->transaksi_id ?>" type="button" class="btn btn-xs btn-danger hapus">Hapus</a> -->
                           </td>
                       </tr>
                       <?php $nomor++ ?>

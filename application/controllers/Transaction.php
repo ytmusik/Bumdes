@@ -13,8 +13,66 @@ class Transaction extends CI_controller{
         }
     }
 
-    function index(){
+    function index() {
+        $data['transaksi'] = $this->db->get('transaksi_pam')->result();
+        $this->load->view('MenuPage/Main/transaksi_list', $data);
+    }
 
-        $this->load->view('MenuPage/Main/transaction_list');
+    function tambah() {
+        $this->load->view('MenuPage/Form/tambah_range');
+    }
+
+    function store() {
+        $range_awal = $this->input->post('range_awal');
+		$range_akhir = $this->input->post('range_akhir');
+		$biaya = $this->input->post('biaya');
+ 
+		$data = array(
+			'range_awal' => $range_awal,
+			'range_akhir' => $range_akhir,
+			'range' => $range_awal . " - " . $range_akhir . " m3",
+            'biaya' => $biaya
+			);
+		$insert = $this->db->insert('range_pam', $data);
+		if($insert) 
+        {
+            $this->ses->set_flashdata('sukses_tambah', 'data berhasil ditambah');
+            
+            redirect('range');
+        }
+    }
+
+    function edit($range_id) {
+        $data['d'] = $this->db->get_where('range_pam', ['range_id' => $range_id])->row();
+
+        $this->load->view('MenuPage/Form/edit_range', $data);
+    }
+
+    function update() {
+        $range_id = $this->input->post('range_id');
+        $range_awal = $this->input->post('range_awal');
+		$range_akhir = $this->input->post('range_akhir');
+		$biaya = $this->input->post('biaya');
+ 
+		$data = array(
+			'range_awal' => $range_awal,
+			'range_akhir' => $range_akhir,
+			'range' => $range_awal . " - " . $range_akhir . " m3",
+            'biaya' => $biaya
+			);
+		$update = $this->db->update('range_pam' ,$data, ['range_id' => $range_id]);
+		if($update) 
+        {
+            $this->ses->set_flashdata('sukses_update', 'data berhasil dirubah');
+            redirect('range');
+        }
+    }
+
+    function delete($range_id) {
+        $delete = $this->db->delete('range_pam', ['range_id' => $range_id]);
+        if ($delete) {
+            $this->ses->set_flashdata('sukses_delete', 'data berhasil dihapus');
+            redirect('range');
+        }
     }
 }

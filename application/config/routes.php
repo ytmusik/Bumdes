@@ -184,10 +184,15 @@ $route['range'] = 'range/index';
 $route['tambah-range'] = 'range/tambah';
 $route['store-range'] = 'range/store';
 $route['edit-range/(:num)'] = 'range/edit/$1';
-$route['update-range/(:num)'] = 'range/update/$1';
+$route['update-range'] = 'range/update';
 $route['delete-range/(:num)'] = 'range/delete/$1';
 
-$route['transaction'] = 'Transaction/index';
+$route['transaksi'] = 'transaksi/index';
+$route['tambah-transaksi'] = 'transaksi/tambah';
+$route['store-transaksi'] = 'transaksi/store';
+$route['edit-transaksi/(:num)'] = 'transaksi/edit/$1';
+$route['update-transaksi'] = 'transaksi/update';
+$route['delete-transaksi/(:num)'] = 'transaksi/delete/$1';
 
 
 
