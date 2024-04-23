@@ -60,30 +60,68 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h1>Ubah Data Range</h1>
+                    <h1>Bayar Tagihan</h1>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form action="<?= base_url('update-range') ?>" id="" method="POST" class="form-horizontal form-label-left">
+                    <form action="<?= base_url('update-transaksi') ?>" id="" method="POST" class="form-horizontal form-label-left">
+                    <input type="hidden" name="transaksi_id" value="<?= $d->transaksi_id ?>" >
                     <div class="form-group">
-                        <input type="hidden" name="range_id" value="<?= $d->range_id ?>" >
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Range Awal</label>
+                        <?php $user = $this->db->get_where('user', ['user_id' => $d->user_id])->row(); ?>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">User</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="number" value="<?= $d->range_awal ?>"  autocomplete="off" required="" class="form-control" name="range_awal">
+                          <select name="user_id" id="user_id" class="form-control" readonly>
+                              <option value="<?= $user->user_id ?>"><?= $user->nama ?></option>
+                          </select>
                         </div>
                       </div> <br>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Range Akhir</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Bulan</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input autocomplete="off" value="<?= $d->range_akhir ?>" type="number" required="" class="form-control" name="range_akhir">
+                          <select name="bulan" id="bulan" class="form-control" readonly>
+                              <option value="<?= $d->bulan ?>"><?= $d->bulan ?></option>
+                          </select>
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Tahun</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <select name="tahun" id="tahun" class="form-control" readonly>
+                              <option value="<?= $d->tahun ?>"><?= $d->tahun ?></option>
+                          </select>
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Total Kubik Penggunaan</label>
+                        <?php $total_kubik = $d->range_akhir - $d->range_awal ?>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input type="number" autocomplete="off" required="" class="form-control" name="total_kubik" value="<?= $total_kubik ?>" readonly>
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Total Penggunaan</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input autocomplete="off" type="number" required="" class="form-control" name="total_penggunaan" value="<?= $d->total_penggunaan ?>" readonly >
                         </div>
                       </div><br>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Biaya</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Admin</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="text" value="<?= $d->biaya ?>" required="" class="form-control" name="biaya">
+                          <input autocomplete="off" type="number" required="" class="form-control" name="admin" value="5000" readonly >
                         </div>
-                      </div> <br>
+                      </div><br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Total Biaya</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input autocomplete="off" type="number" required="" class="form-control" name="total_biaya" value="<?= $d->total_biaya ?>" readonly >
+                        </div>
+                      </div><br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Bayar</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input autocomplete="off" type="number" required="" class="form-control" name="bayar" >
+                        </div>
+                      </div><br>
                       
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <button type="submit" class="btn btn-md btn-primary">Kirim</button>

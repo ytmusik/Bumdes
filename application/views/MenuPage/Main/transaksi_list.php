@@ -83,8 +83,38 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-12">
-                  <a href="tambah-transaksi" class="btn btn-md btn-info">Input Tagihan</a>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <a href="tambah-transaksi" class="btn btn-md btn-info float-left">Input Tagihan</a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right align-center">
+                <form action="cetak-transaksi" method="post" class="form-inline" >
+                    <select name="bulan" id="bulan" class="form-control" >
+                      <option value="Januari">Januari</option>
+                      <option value="Februari">Februari</option>
+                      <option value="Maret">Maret</option>
+                      <option value="April">April</option>
+                      <option value="Mei">Mei</option>
+                      <option value="Juni">Juni</option>
+                      <option value="Juli">Juli</option>
+                      <option value="Agustus">Agustus</option>
+                      <option value="September">September</option>
+                      <option value="Oktober">Oktober</option>
+                      <option value="November">November</option>
+                      <option value="Desember">Desember</option>
+                    </select>
+
+                    <select name="tahun" id="tahun" class="form-control" >
+                      <?php $tahun = date('Y') ?>
+                      <option value="<?= $tahun-3 ?>"><?= $tahun-3 ?></option>
+                      <option value="<?= $tahun-2 ?>"><?= $tahun-2 ?></option>
+                      <option value="<?= $tahun-1 ?>"><?= $tahun-1 ?></option>
+                      <option value="<?= $tahun ?>"><?= $tahun ?></option>
+                      <option value="<?= $tahun+1 ?>"><?= $tahun+1 ?></option>
+                      <option value="<?= $tahun+2 ?>"><?= $tahun+2 ?></option>
+                      <option value="<?= $tahun+3 ?>"><?= $tahun+3 ?></option>
+                    </select>
+                    <button class="btn btn-success btn-xs" type="submit"><i class="fa fa-print"></i> Cetak</button>
+                  </form>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="row">
@@ -110,6 +140,7 @@
                     <th>Pemakaian</th>
                     <th>Admin</th>
                     <th>Total</th>
+                    <th>Bayar</th>
                     <th>Status</th>
                     <th>Aksi</th>
                   </tr>
@@ -124,10 +155,17 @@
                           <td><?php echo $d->range_awal ?></td>
                           <td><?php echo $d->range_akhir ?></td>
                           <td><?php echo $d->bulan . "/" . $d->tahun ?></td>
-                          <td><?php echo $d->total_penggunaan ?></td>
+                          <td>Rp. <?= number_format($d->total_penggunaan, 0, ',' , '.') ?></td>
                           <td>Rp. 5.000</td>
                           <td>Rp. <?= number_format($d->total_biaya, 0, ',' , '.') ?></td>
                           <td>
+                            <?php if($d->bayar != null) : ?>
+                              Rp. <?= number_format($d->bayar, 0, ',' , '.') ?>
+                            <?php else : ?>
+                              Rp. -
+                            <?php endif; ?>
+                          </td>
+                          <td class="text-center" >
                             <?php if($d->status == 0) : ?>
                               <div class="badge bg-red" >Belum bayar</div>
                             <?php else : ?>
@@ -135,7 +173,7 @@
                             <?php endif ?>
                           </td>
                           <td class="text-center">
-                            <a href="edit-range/<?= $d->transaksi_id ?>" class="btn btn-xs btn-success">Bayar</a>
+                            <a href="edit-transaksi/<?= $d->transaksi_id ?>" class="btn btn-xs btn-success">Bayar</a>
                             <!-- <a onclick="return confirm('are your sure want to delete this?')" href="delete-range/<?= $d->transaksi_id ?>" type="button" class="btn btn-xs btn-danger hapus">Hapus</a> -->
                           </td>
                       </tr>

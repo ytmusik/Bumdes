@@ -53,54 +53,42 @@
 
         <!-- page content -->
         <div class="right_col" role="main" style="color:black;">
-          <div class="row tile_count">
-            <div class="col-md-4 col-sm-4 col-xs-12 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Penyewaan <?= $Y ?></span>
-              <div class="count"><?= isset($v->hg)?'Rp. '.$v->hg:'Rp. 0' ?></div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12 tile_stats_count">
-              <span class="count_top"><i class="fa fa-clock-o"></i> Penjualan <?= $nam_bulan ?> <?= $Y ?></span>
-              <div class="count"><?= isset($v2->hg)?'Rp. '.$v2->hg:'Rp. 0' ?></div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Bagi hasil <?= $Y ?></span>
-              <div class="count"><?= isset($v3->hg)?'Rp. '.$v3->hg:'Rp. 0' ?></div>
-            </div>
-          </div>
 
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <a href="<?= base_url('rentalling') ?>">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <div class="dashboard_graph">
                 <div class="row x_title">
                   <div class="col-md-12">
-                    <h3>Pertumbuhan perdagangan <small>Bulan <?= $nam_bulan ?> <?= $Y ?></small></h3>
+                    <h3>PENYEWAAN</h3>
                   </div>
                 </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <!-- <div id="chart_plot_01" class="demo-placeholder"></div> -->
-                  <div id="grafik_perdagangan"></div>
+                <div class="row">
+                  <div class="col text-center">
+                    <img src="<?= base_url('asset/gambar/rent.png') ?>" alt="">
+                  </div>
                 </div>
-                <div class="clearfix"></div>
               </div>
             </div>
-          </div>
+            </a>
           <br>
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
+
+          <a href="<?= base_url('transaksi') ?>">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <div class="dashboard_graph">
                 <div class="row x_title">
                   <div class="col-md-12">
-                    <h3>Pertumbuhan penyewaan <small>Bulan <?= $nam_bulan ?> <?= $Y ?></small></h3>
+                    <h3>PAMSIMAS</h3>
                   </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <!-- <div id="chart_plot_01" class="demo-placeholder"></div> -->
-                  <div id="grafik_penyewaan"></div>
+                <div class="row">
+                  <div class="col text-center">
+                    <img src="<?= base_url('asset/gambar/water.png') ?>" alt="">
+                  </div>
                 </div>
-                <div class="clearfix"></div>
               </div>
             </div>
+          </a>
           </div>
           <br>
           <br>

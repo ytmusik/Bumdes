@@ -25,7 +25,7 @@
                   <li><a><i class="fa fa-edit"></i>Pamsimas<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= site_url('range') ?>">Range</a></li>
-                      <li><a href="<?= site_url('transaction') ?>">Transaction</a></li>
+                      <li><a href="<?= site_url('transaksi') ?>">Transaction</a></li>
                     </ul>
                   </li>
 

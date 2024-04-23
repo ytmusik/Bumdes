@@ -59,11 +59,52 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
             <div class="x_title">
-            <h1>Tambah Range</h1>
+            <h1>Input Tagihan</h1>
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
-              <form action="store-range"  method="POST" class="form-horizontal form-label-left">
+              <form action="store-transaksi"  method="POST" class="form-horizontal form-label-left">
+                      <div class="form-group">
+                        <?php $user = $this->db->get('user')->result(); ?>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">User</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <select name="user_id" id="user_id" class="form-control" >
+                            <?php foreach ($user as $u) : ?>
+                              <option value="<?= $u->user_id ?>"><?= $u->nama ?></option>
+                            <?php endforeach ?>
+                          </select>
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Bulan</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <select name="bulan" id="bulan" class="form-control" >
+                            <option value="Januari">Januari</option>
+                            <option value="Februari">Februari</option>
+                            <option value="Maret">Maret</option>
+                            <option value="April">April</option>
+                            <option value="Mei">Mei</option>
+                            <option value="Juni">Juni</option>
+                            <option value="Juli">Juli</option>
+                            <option value="Agustus">Agustus</option>
+                            <option value="September">September</option>
+                            <option value="Oktober">Oktober</option>
+                            <option value="November">November</option>
+                            <option value="Desember">Desember</option>
+                          </select>
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Tahun</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <select name="tahun" id="tahun" class="form-control" >
+                            <?php $tahun = date('Y') ?>
+                            <option value="<?= $tahun ?>"><?= $tahun ?></option>
+                            <option value="<?= $tahun+1 ?>"><?= $tahun+1 ?></option>
+                            <option value="<?= $tahun+2 ?>"><?= $tahun+2 ?></option>
+                          </select>
+                        </div>
+                      </div> <br>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Range Awal</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
@@ -76,13 +117,6 @@
                           <input autocomplete="off" type="number" required="" class="form-control" name="range_akhir">
                         </div>
                       </div><br>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Biaya</label>
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="text" required="" class="form-control" name="biaya">
-                        </div>
-                      </div> <br>
-                      
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <button type="submit" class="btn btn-md btn-primary">Submit</button>
                       </div>

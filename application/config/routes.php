@@ -193,6 +193,6 @@ $route['store-transaksi'] = 'transaksi/store';
 $route['edit-transaksi/(:num)'] = 'transaksi/edit/$1';
 $route['update-transaksi'] = 'transaksi/update';
 $route['delete-transaksi/(:num)'] = 'transaksi/delete/$1';
-
+$route['cetak-transaksi'] = 'transaksi/cetak';
 
 
