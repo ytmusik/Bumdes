@@ -10,9 +10,11 @@
 
     <style>
       .cards {
-        height: 100%;
+        margin-left: 800px;
+        height: 20%;
         display: flex;
-        justify-content: center;
+        width: 25%;
+        justify-content: right;
         align-items: right;
       }
     </style>
@@ -44,7 +46,7 @@
       </table>
     </div>
     <div class="row">
-      <div class="float-right"  style="margin-right:10px;">
+      <div class="cards float-right">
         <p>mengetahui</p>
         <p>Kepala Desa Krandon</p>
         <br><br><br>
