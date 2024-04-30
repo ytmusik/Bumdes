@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bumdes kalipuru | <?= $title ?></title>
+    <title>Bumdes Krandon Jaya Mandiri</title>
 
     <?php $this->load->view('SuptPage/CssP') ?>
     <!-- bootstrap-daterangepicker -->
@@ -22,7 +22,7 @@
         <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?= site_url('home') ?>" class="site_title"><i class="fa fa-paw"></i> <span>Bumdes kalipuru</span></a>
+              <a href="<?= site_url('home') ?>" class="site_title"><i class="fa fa-paw"></i> <span>Bumdes Krandon Jaya Mandiri</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -103,10 +103,11 @@
                           <td><?php echo $d->no_hp ?></td>
                           <td><?php echo $d->status ?></td>
                           <td class="text-center">
-                            <a href="http://localhost:8080/BumdesApp/edit-rp/0031585412684" class="btn btn-xs btn-warning">Ubah</a>
+                            <a href="edit-data-user/<?= $d->user_id?>" class="btn btn-xs btn-warning">Ubah</a>
                             <button type="button" class="btn btn-xs btn-danger hapus" value="0031585412684">Hapus</button>
                           </td>
                       </tr>
+                  <?php $nomor++ ?>
                   <?php endforeach?>           
                   </tbody>
               </table>
@@ -121,7 +122,7 @@
         <!-- footer content -->
         <footer style="border-top: 1px solid #d9dee4;">
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            BUMDES - Krandon Jaya Mandiri
           </div>
           <div class="clearfix"></div>
         </footer>

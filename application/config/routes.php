@@ -27,7 +27,8 @@ $route['rent-price'] = 'Rent/rent_price';//=========ada
 $route['add-schedule']='Rent/form_tambah_jadwal';//=========ada view
 $route['tambah-aset-sewa']='Rent/form_tambah_aset_sewa';//==================ada view
 $route['edit-ar/(:num)']='Rent/form_edit_penyewaan/$1';//===================ada view
-$route['edit-rp/(:num)'] = 'Rent/form_edit_aset_sewa/$1';//=================ada view
+$route['edit-data-user/(:num)'] = 'Rent/form_edit_data_user/$1';//=================ada view
+$route['update-data-user/(:num)'] = 'Rent/form_update_data_user/$1';
 $route['detail-rp/(:num)'] = 'Rent/detail_aset_sewa/$1';//=============ada view
 $route['unduh-daftar-sewa'] = 'Rent/pdf_sewa';//=======================ada view
 $route['unduh-harga-sewa'] = 'Rent/pdf_harga_sewa';//================= ada view

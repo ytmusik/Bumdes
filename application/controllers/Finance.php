@@ -214,28 +214,29 @@ class Finance extends CI_controller{
     }
 
     function form_tambah_user(){//=============ada view
-        // $nama = $this->input->post('nama');
-		// $alamat = $this->input->post('alamat');
-		// $no_hp = $this->input->post('no_hp');
-        // $status = $this->input->post('status');
+        if ($this->input->post()){
+        $nama = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
+		$no_hp = $this->input->post('no_hp');
+        $status = $this->input->post('status');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
  
-		// $data = array(
-		// 	'nama' => $nama,
-		// 	'alamat' => $alamat,
-		// 	'no_hp' => $no_hp,
-        //     'status' => $status
-		// 	);
-		// $this->input_data($data,'user');
-		// redirect('MenuPage/Form/tambah_user');
-
-        $dt['title'] = '';
-        $dt['id'] = '';
-        $dt['tanggal'] = date('d/m/Y');
-        $dt['v2'] = $this->am->get_rekanan('JSON');
-        $dt['v3'] = $this->am->get_aset_umum('JSON');
+		$data = array(
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'no_hp' => $no_hp,
+            'status' => $status,
+            'username' => $username,
+            'password' => $password
+			);
+		$this->db->insert('user',$data);
+        //$this->load->view('MenuPage/Main/user_list');
+        redirect('user');  
+        }  
+        else{     
         $this->load->view('MenuPage/Form/tambah_user');
-
-        echo json_encode($dt['v3']);
+        }
     }
 
     function form_edit_aset_bagi_hasil($id){//=============ada view
