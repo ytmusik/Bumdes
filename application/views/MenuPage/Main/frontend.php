@@ -204,7 +204,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        
+      <li><a href="homepage">Login</a></li>
       </ul>
     </div>
   </div>

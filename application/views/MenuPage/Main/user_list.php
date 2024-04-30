@@ -67,17 +67,25 @@
             <div class="row">
                 <div class="col">
                   <?php if($this->ses->flashdata('sukses_tambah')) : ?>
-                    <div class="alert alert-success" role="alert">
-                      <i class="fa fa-checklist"></i>
-                      Data berhasil ditambah
-                    </div>
-                  <?php elseif($this->ses->flashdata('sukses_update')) : ?>
-                    <div class="alert alert-warning" role="alert">
-                      Data berhasil dirubah
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                      <strong>Congratulation!</strong> Data berhasil ditambah
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>                 
+                    <?php elseif($this->ses->flashdata('sukses_update')) : ?>
+                      <div class="alert alert-warning alert-dismissible" role="alert">
+                      <strong>Congratulation!</strong> Data berhasil dirubah
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
                   <?php elseif($this->ses->flashdata('sukses_delete')) : ?>
-                    <div class="alert alert-danger" role="alert">
-                      Data berhasil dihapus
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                      <strong>Congratulation!</strong> Data berhasil dihapus
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
                   <?php endif ?>
                 </div>
@@ -149,7 +157,6 @@
     </div>
 
     <?php $this->load->view('SuptPage/JsP') ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="<?= base_url('asset/') ?>/JS/Highchart.js"></script>
     <script src="<?= base_url('asset/') ?>/JS/Form_hapus.js"></script>
     <!--Javascript tambahan -->

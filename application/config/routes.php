@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$route['default_controller'] = 'Homepage';
+$route['default_controller'] = 'Frontend';
+$route['homepage'] = 'Homepage';
 
 // routing perdagangan **
 $route['item-sold'] = 'Trade/sales_report';

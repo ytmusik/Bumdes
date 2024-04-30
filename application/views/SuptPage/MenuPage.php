@@ -30,7 +30,7 @@
                   </li>
 
                   <li><a href="<?= site_url('user') ?>"><i class="fa fa-book"></i>Daftar pengguna<span class="fa fa-chevron-right"></span></a></li>
-                  <li><a href="<?= site_url('dividen-bumdes') ?>"><i class="fa fa-home"></i>Bagi hasil usaha<span class="fa fa-chevron-right"></span></a></li>
+                  <!-- <li><a href="<?= site_url('dividen-bumdes') ?>"><i class="fa fa-home"></i>Bagi hasil usaha<span class="fa fa-chevron-right"></span></a></li> -->
                   <li><a href="<?= site_url('assets') ?>"><i class="fa fa-home"></i>Aset Bumdes<span class="fa fa-chevron-right"></span></a></li>
                   <!-- <li><a><i class="fa fa-home"></i>Aset<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
