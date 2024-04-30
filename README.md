@@ -5,9 +5,9 @@
 
 ## Siapa Pembuat Aplikasi ini?
 ```
- - Bagus Budi Satoto
+ - kabebullah
  - Jurusan Informatika 
- - Universitas Amikom Yogyakarta
+ - Universitas NU Pekalongan
 ```
 
 ## Fitur-fitur :

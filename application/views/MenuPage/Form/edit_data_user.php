@@ -64,7 +64,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  <form action="update-data-user" id="" method="POST" class="form-horizontal form-label-left">
+                  <form action="<?= base_url() ?>/update-data-user" id="" method="POST" class="form-horizontal form-label-left">
+                      <input type="hidden" name="user_id" value="<?= $d->user_id ?>">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Nama Pengguna</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
@@ -136,5 +137,6 @@
     <?php $this->load->view('SuptPage/JsP') ?>
     <script src="<?= base_url('asset/JS/Fitur.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Form_edit.js') ?>"></script>
+    <script>setTimeout(function(){ $('.alert').fadeOut() }, 3000);</script>
   </body>
 </html>

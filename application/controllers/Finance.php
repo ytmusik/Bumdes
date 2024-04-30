@@ -222,6 +222,7 @@ class Finance extends CI_controller{
         $username = $this->input->post('username');
         $password = $this->input->post('password');
  
+
 		$data = array(
 			'nama' => $nama,
 			'alamat' => $alamat,
@@ -232,11 +233,13 @@ class Finance extends CI_controller{
 			);
 		$this->db->insert('user',$data);
         //$this->load->view('MenuPage/Main/user_list');
+        $this->ses->set_flashdata('sukses_tambah', 'data berhasil ditambah');
         redirect('user');  
         }  
         else{     
         $this->load->view('MenuPage/Form/tambah_user');
         }
+
     }
 
     function form_edit_aset_bagi_hasil($id){//=============ada view

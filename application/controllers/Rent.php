@@ -88,8 +88,9 @@ class Rent extends CI_Controller{
         // echo json_encode($dt['v']);
     }
 
-    function form_update_data_user($user_id){
+    function form_update_data_user(){
         if ($this->input->post()){
+            $user_id = $this->input->post('user_id');
             $nama = $this->input->post('nama');
             $alamat = $this->input->post('alamat');
             $no_hp = $this->input->post('no_hp');
@@ -105,14 +106,23 @@ class Rent extends CI_Controller{
                 'username' => $username,
                 'password' => $password
                 );
-            $this->db->update('user',$data);
+            $this->db->update('user', $data,  ['user_id' => $user_id]);
             //$this->load->view('MenuPage/Main/user_list');
+            $this->ses->set_flashdata('sukses_update', 'data berhasil dirubah');
             redirect('user');  
             }  
             else{     
-            $this->load->view('MenuPage/Form/tambah_user');
+            $this->load->view('MenuPage/Form/edit_user');
             }
 
+    }
+
+    function hapus_user($user_id) {
+        $delete = $this->db->delete('user', ['user_id' => $user_id]);
+        if($delete) {
+            $this->ses->set_flashdata('sukses_delete', 'data berhasil dihapus');
+            redirect('user');
+        }
     }
 
     function detail_aset_sewa($id){//=============ada view

@@ -28,7 +28,7 @@ $route['add-schedule']='Rent/form_tambah_jadwal';//=========ada view
 $route['tambah-aset-sewa']='Rent/form_tambah_aset_sewa';//==================ada view
 $route['edit-ar/(:num)']='Rent/form_edit_penyewaan/$1';//===================ada view
 $route['edit-data-user/(:num)'] = 'Rent/form_edit_data_user/$1';//=================ada view
-$route['update-data-user/(:num)'] = 'Rent/form_update_data_user/$1';
+$route['update-data-user'] = 'Rent/form_update_data_user';
 $route['detail-rp/(:num)'] = 'Rent/detail_aset_sewa/$1';//=============ada view
 $route['unduh-daftar-sewa'] = 'Rent/pdf_sewa';//=======================ada view
 $route['unduh-harga-sewa'] = 'Rent/pdf_harga_sewa';//================= ada view
@@ -181,4 +181,19 @@ $route['keluar-sistem'] = 'Homepage/keluar';//=================ada view
 $route['konfirmasi-ganti-email/(:num)'] = 'Homepage/konfirmasi_ganti_email/$1';//=================ada view
 $route['cek-mail'] = 'Administrasi/cek_mail';//=================ada view
 
+$route['range'] = 'range/index';
+$route['tambah-range'] = 'range/tambah';
+$route['store-range'] = 'range/store';
+$route['edit-range/(:num)'] = 'range/edit/$1';
+$route['update-range'] = 'range/update';
+$route['delete-range/(:num)'] = 'range/delete/$1';
 
+$route['transaksi'] = 'transaksi/index';
+$route['tambah-transaksi'] = 'transaksi/tambah';
+$route['store-transaksi'] = 'transaksi/store';
+$route['edit-transaksi/(:num)'] = 'transaksi/edit/$1';
+$route['update-transaksi'] = 'transaksi/update';
+$route['delete-transaksi/(:num)'] = 'transaksi/delete/$1';
+$route['cetak-transaksi'] = 'transaksi/cetak';
+
+$route['hapus_user/(:num)'] = 'rent/hapus_user/$1';

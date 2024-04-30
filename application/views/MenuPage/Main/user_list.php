@@ -64,6 +64,24 @@
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
+            <div class="row">
+                <div class="col">
+                  <?php if($this->ses->flashdata('sukses_tambah')) : ?>
+                    <div class="alert alert-success" role="alert">
+                      <i class="fa fa-checklist"></i>
+                      Data berhasil ditambah
+                    </div>
+                  <?php elseif($this->ses->flashdata('sukses_update')) : ?>
+                    <div class="alert alert-warning" role="alert">
+                      Data berhasil dirubah
+                    </div>
+                  <?php elseif($this->ses->flashdata('sukses_delete')) : ?>
+                    <div class="alert alert-danger" role="alert">
+                      Data berhasil dihapus
+                    </div>
+                  <?php endif ?>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
                   <a href="tambah-user" class="btn btn-md btn-info">Tambah user</a>
@@ -104,7 +122,7 @@
                           <td><?php echo $d->status ?></td>
                           <td class="text-center">
                             <a href="edit-data-user/<?= $d->user_id?>" class="btn btn-xs btn-warning">Ubah</a>
-                            <button type="button" class="btn btn-xs btn-danger hapus" value="0031585412684">Hapus</button>
+                            <a href="hapus_user/<?= $d->user_id ?>" onclick="return confirm('yakin hapus?')" class="btn btn-xs btn-danger">Hapus</a>
                           </td>
                       </tr>
                   <?php $nomor++ ?>
@@ -131,6 +149,7 @@
     </div>
 
     <?php $this->load->view('SuptPage/JsP') ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="<?= base_url('asset/') ?>/JS/Highchart.js"></script>
     <script src="<?= base_url('asset/') ?>/JS/Form_hapus.js"></script>
     <!--Javascript tambahan -->
@@ -138,6 +157,8 @@
     <script src="<?= base_url('asset/JS/Ajax_req.js') ?>"></script>
     <script>
       bagi_hasil(JSON.parse('<?= $v_grafik ?>'),'#grafik_bagi_hasil',2020);
+  
+      setTimeout(function(){ $('.alert').fadeOut() }, 3000);
     </script>
   </body>
 </html>
