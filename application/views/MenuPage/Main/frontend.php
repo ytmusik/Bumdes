@@ -276,7 +276,7 @@
             <td><?= $d->total_penggunaan ?></td>
             <td><?= "5000" ?></td>
             <td><?= $d->total_penggunaan + 5000 ?></td>
-            <td><?= "---" ?></td>
+            <td><?= $d->bayar == NULL ? 'Belum Bayar' : 'Lunas' ?></td>
           </tr>
           <?php $no++ ?>
           <?php endforeach ?>
@@ -287,6 +287,40 @@
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-signal logo"></span>
     </div>
+  </div>
+	<div class="row">
+    <div class="col-sm-8">
+      <h2>Daftar Tagihan Sampah</h2>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Periode</th>
+          <th>Tagihan</th>
+          <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php if(isset($transaksi_sampah)) : ?>
+          <?php $no = 1 ?>
+          <?php foreach($transaksi_sampah as $d) : ?>
+          <tr>
+            <td><?= $no ?></td>
+            <td><?= $d->nama ?></td>
+            <td><?= $d->bulan . " / " . $d->tahun ?></td>
+            <td><?= $d->tagihan ?></td>
+            <td><?= $d->bayar == NULL ? 'Belum Bayar' : 'Lunas' ?></td>
+          </tr>
+          <?php $no++ ?>
+          <?php endforeach ?>
+          <?php endif ?>
+        </tbody>
+      </table>
+    </div>
+    <!-- <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div> -->
   </div>
 </div>
 
@@ -370,4 +404,8 @@ setTimeout(function(){ $('.alert').fadeOut() }, 3000);
 </script>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> d756d4416d1c3a42224afafb4d81780400ac419a
