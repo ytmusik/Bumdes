@@ -21,7 +21,7 @@
                     </ul>
                   </li>
 
-                  <li><a href="<?= site_url('#') ?>"><i class="fa fa-edit"></i>Pengelolaan Sampah<span class="fa fa-chevron-right"></span></a></li>
+                  <li><a href="<?= site_url('transaksi_sampah') ?>"><i class="fa fa-edit"></i>Pengelolaan Sampah<span class="fa fa-chevron-right"></span></a></li>
                   <li><a><i class="fa fa-edit"></i>Pamsimas<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?= site_url('range') ?>">Range</a></li>

@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$route['default_controller'] = 'Homepage';
+$route['default_controller'] = 'Frontend';
+$route['homepage'] = 'Homepage';
 
 // routing perdagangan **
 $route['item-sold'] = 'Trade/sales_report';
@@ -194,5 +195,13 @@ $route['edit-transaksi/(:num)'] = 'transaksi/edit/$1';
 $route['update-transaksi'] = 'transaksi/update';
 $route['delete-transaksi/(:num)'] = 'transaksi/delete/$1';
 $route['cetak-transaksi'] = 'transaksi/cetak';
+
+$route['transaksi_sampah'] = 'sampah/index';
+$route['tambah-transaksi-sampah'] = 'sampah/tambah';
+$route['store-transaksi-sampah'] = 'sampah/store';
+$route['edit-transaksi-sampah/(:num)'] = 'sampah/edit/$1';
+$route['update-transaksi-sampah'] = 'sampah/update';
+$route['delete-transaksi-sampah/(:num)'] = 'sampah/delete/$1';
+$route['cetak-transaksi-sampah'] = 'sampah/cetak';
 
 

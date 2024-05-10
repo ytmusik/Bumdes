@@ -151,7 +151,8 @@
                   <?php foreach($transaksi as $d):?>
                     <tr>
                           <td class="text-center" ><?php echo $nomor ?></td>
-                          <td><?php echo $d->user_id ?></td>
+													<?php $user = $this->db->get_where('user', ['user_id' => $d->user_id])->row(); ?>
+                          <td><?php echo $user->nama ?></td>
                           <td><?php echo $d->range_awal ?></td>
                           <td><?php echo $d->range_akhir ?></td>
                           <td><?php echo $d->bulan . "/" . $d->tahun ?></td>
