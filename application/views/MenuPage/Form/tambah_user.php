@@ -63,7 +63,7 @@
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
-              <form action="#" id="set-aset-baru" method="POST" class="form-horizontal form-label-left">
+              <form action="tambah-user" id="" method="POST" class="form-horizontal form-label-left">
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Nama Pengguna</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
@@ -94,6 +94,20 @@
                           <label for="">Tidak Aktif</label>
                         </div>
                       </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Username</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input type="text" required="" class="form-control" name="username">
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">password</label>
+                        <i class="bi bi-eye-slash" id="togglePassword"></i>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input type="text" required="" class="form-control" name="password">
+                        </div>
+                      </div> <br>
+                      
                       
                       <div class="col-md-12 col-sm-12 col-xs-12">
                         <button type="submit" class="btn btn-md btn-primary">Kirim</button>
@@ -123,5 +137,20 @@
     <script src="<?= base_url('asset/JS/Dtmpicker.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Error_handler.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Form.js') ?>"></script>
+    <script>
+      const togglePassword = document
+            .querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        togglePassword.addEventListener('click', () => {
+            // Toggle the type attribute using
+            // getAttribure() method
+            const type = password
+                .getAttribute('type') === 'password' ?
+                'text' : 'password';
+            password.setAttribute('type', type);
+            // Toggle the eye and bi-eye icon
+            this.classList.toggle('bi-eye');
+        });
+    </script>
   </body>
 </html>

@@ -152,6 +152,7 @@
     <script src="<?= base_url('asset/JS/Ajax_req.js') ?>"></script>
     <script>
       bagi_hasil(JSON.parse('<?= $v_grafik ?>'),'#grafik_bagi_hasil',2020);
+      setTimeout(function(){ $('.alert').fadeOut() }, 3000);
     </script>
   </body>
 </html>

@@ -60,35 +60,58 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h1>Ubah data aset sewa</h1>
+                    <h1>Ubah data pengguna</h1>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <form action="<?= site_url('edit-aset-sewa') ?>" id="edit_aset_sewa" method="POST" class="form-horizontal form-label-left">
+                  <form action="<?= base_url() ?>/update-data-user" id="" method="POST" class="form-horizontal form-label-left">
+                      <input type="hidden" name="user_id" value="<?= $d->user_id ?>">
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Nama aset</label>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                          <input type="text" name="nama" readonly class="form-control" value="<?= isset($v->nm)?$v->nm:'-' ?>">
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" readonly class="form-control" name="id" value="<?= isset($v->id)?$v->id:'-' ?>">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Nama Pengguna</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input type="text" value="<?php echo $d->nama ?>" required="" class="form-control" name="nama">
                         </div>
                       </div> <br>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="penyewa">Nomor aset</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="">Alamat</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="text" readonly class="form-control" value="<?= isset($v->na)?$v->na:'-' ?>">
+                          <input autocomplete="off" type="text" value="<?php echo $d->alamat ?>" required="" class="form-control" name="alamat">
                         </div>
                       </div><br>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Harga sewa</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">No HP</label>
                         <div class="col-md-6 col-sm-6 col-xs-6">
-                          <input type="text" required class="form-control" name="harga" value="<?= isset($v->hs)?$v->hs:'-' ?>" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                          <input type="text" value="<?php echo $d->no_hp ?>" required="" class="form-control" name="no_hp">
                         </div>
-                      </div><br>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3" for="kontak">Status</label>
+                        <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                          <input checked="" type="radio" value="<?php echo $d->status ?>" name="status" value="Aktif" class="primary">
+                          <label for="">Aktif</label>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                          <input type="radio" value="<?php echo $d->status ?>" name="status" value="Tidak Aktif">
+                          <label for="">Tidak Aktif</label>
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">Username</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input type="text" value="<?php echo $d->username ?>" required="" class="form-control" name="username">
+                        </div>
+                      </div> <br>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3">password</label>
+                        <i class="bi bi-eye-slash" id="togglePassword"></i>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input type="text" value="<?php echo $d->password ?>" required="" class="form-control" name="password">
+                        </div>
+                      </div> <br>
+                      
                       
                       <div class="col-md-12 col-sm-12 col-xs-12">
-                        <button <?= isset($v->id)?null:'disabled' ?> type="submit" class="btn btn-md btn-primary">Kirim</button>
+                        <button type="submit" class="btn btn-md btn-primary">Update</button>
                       </div>
                     </form>
                   </div>
@@ -114,5 +137,6 @@
     <?php $this->load->view('SuptPage/JsP') ?>
     <script src="<?= base_url('asset/JS/Fitur.js') ?>"></script>
     <script src="<?= base_url('asset/JS/Form_edit.js') ?>"></script>
+    <script>setTimeout(function(){ $('.alert').fadeOut() }, 3000);</script>
   </body>
 </html>

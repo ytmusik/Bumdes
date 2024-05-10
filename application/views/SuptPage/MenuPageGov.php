@@ -13,7 +13,7 @@
                   <li><a href="<?= site_url('gov-asset') ?>"><i class="fa fa-car"></i>Aset<span class="fa fa-chevron-right"></span></a></li>
                   <li><a href="<?= site_url('gov-finansial') ?>"><i class="fa fa-money"></i>Keuangan<span class="fa fa-chevron-right"></span></a></li>
                   <li><a href="<?= site_url('gov-kerjasama-bgh') ?>"><i class="fa fa-users"></i>Kerjasama bagi hasil<span class="fa fa-chevron-right"></span></a></li>
-                  <li><a href="<?= site_url('gov-dividen') ?>"><i class="fa fa-bar-chart"></i>Bagi hasil Usaha<span class="fa fa-chevron-right"></span></a></li>
+                  <!-- <li><a href="<?= site_url('gov-dividen') ?>"><i class="fa fa-bar-chart"></i>Bagi hasil Usaha<span class="fa fa-chevron-right"></span></a></li> -->
                 </ul>
               </div>
               <div class="menu_section">

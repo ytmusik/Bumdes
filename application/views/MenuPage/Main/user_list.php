@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bumdes kalipuru | <?= $title ?></title>
+    <title>Bumdes Krandon Jaya Mandiri</title>
 
     <?php $this->load->view('SuptPage/CssP') ?>
     <!-- bootstrap-daterangepicker -->
@@ -22,7 +22,7 @@
         <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?= site_url('home') ?>" class="site_title"><i class="fa fa-paw"></i> <span>Bumdes kalipuru</span></a>
+              <a href="<?= site_url('home') ?>" class="site_title"><i class="fa fa-paw"></i> <span>Bumdes Krandon Jaya Mandiri</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -64,6 +64,32 @@
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
+            <div class="row">
+                <div class="col">
+                  <?php if($this->ses->flashdata('sukses_tambah')) : ?>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                      <strong>Congratulation!</strong> Data berhasil ditambah
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>                 
+                    <?php elseif($this->ses->flashdata('sukses_update')) : ?>
+                      <div class="alert alert-warning alert-dismissible" role="alert">
+                      <strong>Congratulation!</strong> Data berhasil dirubah
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  <?php elseif($this->ses->flashdata('sukses_delete')) : ?>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                      <strong>Congratulation!</strong> Data berhasil dihapus
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  <?php endif ?>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
                   <a href="tambah-user" class="btn btn-md btn-info">Tambah user</a>
@@ -103,10 +129,11 @@
                           <td><?php echo $d->no_hp ?></td>
                           <td><?php echo $d->status ?></td>
                           <td class="text-center">
-                            <a href="http://localhost:8080/BumdesApp/edit-rp/0031585412684" class="btn btn-xs btn-warning">Ubah</a>
-                            <button type="button" class="btn btn-xs btn-danger hapus" value="0031585412684">Hapus</button>
+                            <a href="edit-data-user/<?= $d->user_id?>" class="btn btn-xs btn-warning">Ubah</a>
+                            <a href="hapus_user/<?= $d->user_id ?>" onclick="return confirm('yakin hapus?')" class="btn btn-xs btn-danger">Hapus</a>
                           </td>
                       </tr>
+                  <?php $nomor++ ?>
                   <?php endforeach?>           
                   </tbody>
               </table>
@@ -121,7 +148,7 @@
         <!-- footer content -->
         <footer style="border-top: 1px solid #d9dee4;">
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            BUMDES - Krandon Jaya Mandiri
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -137,6 +164,8 @@
     <script src="<?= base_url('asset/JS/Ajax_req.js') ?>"></script>
     <script>
       bagi_hasil(JSON.parse('<?= $v_grafik ?>'),'#grafik_bagi_hasil',2020);
+  
+      setTimeout(function(){ $('.alert').fadeOut() }, 3000);
     </script>
   </body>
 </html>
